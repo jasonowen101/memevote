@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ImageRow from './ImageRow';
+import image1 from './resources/image1.jpg';
+import image2 from './resources/image2.jpg';
+import image3 from './resources/image3.jpg';
+import VoteCollector from './VoteCollector';
+import Header from './Header';
 
-function App() {
+const App = () => {
+  const images = [
+    { src: image1, alt: 'Image 1' },
+    { src: image2, alt: 'Image 2' },
+    { src: image3, alt: 'Image 3' }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <main>
+        <Header />
+        <ImageRow images={images} />
+        <VoteCollector />
+      </main>
     </div>
   );
-}
+};
 
 export default App;
